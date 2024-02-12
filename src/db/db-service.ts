@@ -20,7 +20,6 @@ class DbService {
         const id = uuidv4();
         user = {id, ...user} as User;
         this.users.push(user as User);
-        console.log(user);
         return user as User;
     }
 
@@ -38,9 +37,8 @@ class DbService {
         return user;
     }
 
-    async deleteUser(id: string): Promise<boolean> {
-        this.users = this.users.filter((user) => user.id !== id);
-
+    async deleteUser(userId: string): Promise<boolean> {
+        this.users = this.users.filter((user) => user.id !== userId);
         return true;
     }
 

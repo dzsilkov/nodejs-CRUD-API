@@ -1,8 +1,8 @@
 import {IncomingMessage, ServerResponse} from 'http';
 import {MethodRequestHandler} from './method-request-handler';
+import {invalidUnknownMethod} from './response-handlers';
 
 export const handleRequest = async (req: IncomingMessage, res: ServerResponse) => {
-    console.log(req.method?.toLowerCase());
     switch (req.method?.toUpperCase()) {
         case 'GET':
             await MethodRequestHandler.getRequestHandler(req, res);
@@ -17,10 +17,6 @@ export const handleRequest = async (req: IncomingMessage, res: ServerResponse) =
             await MethodRequestHandler.deleteRequestHandler(req, res);
             break;
         default:
-            res.writeHead(
-                405,
-                { 'Content-Type': 'text/plain' },
-            );
-            res.end('unknown method');
+            await invalidUnknownMethod(res);
     }
 };
