@@ -1,0 +1,50 @@
+{
+  "name": "nodejs-crud-api",
+  "version": "1.0.0",
+  "description": "CRUD API",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "start:dev": "nodemon",
+    "start:prod": "cross-env NODE_ENV=production webpack && node ./dist/index.js",
+    "start:multi": "nodemon --multi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzsilkov/nodejs-CRUD-API.git"
+  },
+  "keywords": [
+    "nodejs",
+    "CRUD API"
+  ],
+  "author": "dzsilkov",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "@typescript-eslint/typescript-estree": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.5",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.2",
+    "uuid": "^9.0.1"
+  }
+}
