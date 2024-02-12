@@ -1,16 +1,11 @@
 import dotenv from 'dotenv';
-import {createServer} from 'node:http';
+
+import {listenServer} from './server/server';
 
 dotenv.config();
 
-console.log('app starts stats');
+console.log('app index stars');
 
-const port = process.env.PORT;
-const server = createServer((req, res) => {
-    console.log('Request ', req);
-    console.log('Response', res);
-});
+const port = process.env.PORT || 4000;
 
-server.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+listenServer(port);

@@ -9,7 +9,8 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "start:multi": "nodemon --multi"
   },
   "repository": {
     "type": "git",
